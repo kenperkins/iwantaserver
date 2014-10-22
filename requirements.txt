@@ -1,0 +1,4 @@
+apache-libcloud==0.15.1
+paramiko<=1.15
+Flask==0.10.1
+Flask-SQLAlchemy==2.0

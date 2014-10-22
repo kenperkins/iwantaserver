@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Event details</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="static/iwant.css" rel="stylesheet">
+    <link href="static/terminal.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div class="container">
+    <div class="page-header">
+      <h1>Here, have a server for {{ name }}!</h1>
+      <p class="lead">You can use the following server to build out your project for {{ name }}, but you don't get to keep it.</p>
+      <p class="lead">See our table about getting setup on our <a href="https://developer.rackspace.com/signup/" target="_blank">Developer+</a> program so you can take your hack with you with a $50/mo infrastructure credit!</p>
+    </div>
+    <p class="text-danger">{{ error }}</p>
+    <form class="form-inline" role="form">
+      <div><h5>You get a {{ size }} server running {{ image }}</h5></div>
+      <div><h5>IP: {{ ip }}</h5></div>
+      <div><h5>root password: {{ password }}</h5></div>
+      <div><h4>Open up a terminal, SSH in, and make sure it works:</h4></div>
+      <div class="shell-wrap">
+       <p class="shell-top-bar">/Users/{{ name }}/</p>
+       <ul class="shell-body">
+         <li><kbd>ssh root@{{ ip }}</kbd></li>
+         <li>The authenticity of host '{{ ip }}' can't be established.</li>
+         <li>RSA key fingerprint is 4f:12:c6:27:c4:b8:ee:47:1f:27:f7:c5:ae:f3:7d:3e.</li>
+         <li>Are you sure you want to continue connecting (yes/no)? <kbd>yes</kbd></li>
+         <li>Warning: Permanently added '{{ ip }}' (RSA) to the list of known hosts.</li>
+         <li>root@162.242.253.77.bast's password: <kbd>{{ password }}</kbd></li>
+         <li>Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-36-generic x86_64)</li>
+         <li> ... </li>
+         <li>root@gmas-20141022094107:~#</li>
+       </ul>
+      </div>
+      <div><h4>Enter your email, then submit to make this server yours!</h4></div>
+      <div><input type="email" class="form-control input-lg" name="email" placeholder="your email" required></div>
+      <input type="hidden" name="ip" value="{{ ip }}" />
+      <br/>
+      <button formmethod="post" class="btn btn-lg btn-primary" type="submit">Cool, it's mine!</button>
+    </form>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
