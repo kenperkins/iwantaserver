@@ -12,7 +12,7 @@ import iwantaserver
 from iwantaserver import db, Event, Server
 
 
-def get_creds(config=os.path.join(iwantaserver.__file__[0],
+def get_creds(config=os.path.join(iwantaserver.__path__[0],
                                   "config/libcloud.conf")):
     parser = ConfigParser()
     parser.read(config)
