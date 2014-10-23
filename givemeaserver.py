@@ -2,15 +2,18 @@
 from datetime import datetime
 from ConfigParser import ConfigParser
 import argparse
+import os
 import sys
 
 from libcloud.compute.types import Provider
 from libcloud.compute.providers import get_driver
 
+import iwantaserver
 from iwantaserver import db, Event, Server
 
 
-def get_creds(config="iwantaserver/config/libcloud.conf"):
+def get_creds(config=os.path.join(iwantaserver.__file__[0],
+                                  "config/libcloud.conf")):
     parser = ConfigParser()
     parser.read(config)
 
