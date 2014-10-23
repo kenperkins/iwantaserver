@@ -7,6 +7,7 @@ from flask import (Flask, request, session, g, redirect, url_for, abort,
                    render_template, flash)
 from flask.ext.sqlalchemy import SQLAlchemy
 
+
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data/iwantaserver.db"
 app.config["SECRET_KEY"] = "secretlol"
@@ -80,7 +81,7 @@ def show_event():
             db.session.add(server)
             db.session.commit()
 
-            Popen(["../envs/iwant2/bin/python", "givemeaserver.py",
+            Popen(["givemeaserver.py",
                    "--image", event.image_id,
                    "--size", event.size_id, "--num", "1",
                    "--event", str(event.id)])

@@ -10,7 +10,7 @@ from libcloud.compute.providers import get_driver
 from iwantaserver import db, Event, Server
 
 
-def get_creds(config="libcloud.conf"):
+def get_creds(config="iwantaserver/config/libcloud.conf"):
     parser = ConfigParser()
     parser.read(config)
 

@@ -7,5 +7,8 @@ setup(name="iwantaserver",
       description="Site to hand out servers like candy",
       author="Brian Curtin",
       author_email="brian@python.org",
-      py_modules=["iwantaserver"],
+      packages=["iwantaserver"],
+      scripts=["givemeaserver.py"],
+      include_package_data=True,
+      zip_safe=False
      )
